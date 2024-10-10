@@ -128,8 +128,8 @@ using TMPro;
            // SaveData(Prefs.Progress, "0");
             SceneManager.LoadScene("MainMenu");
 
-           // PlayerPrefs.SetInt("PlayerSetup", 1);
-            PlayerPrefs.Save();
+           PlayerPrefs.SetString("PlayerName", PlayerName);
+           PlayerPrefs.Save();
         }
     }
 // }
