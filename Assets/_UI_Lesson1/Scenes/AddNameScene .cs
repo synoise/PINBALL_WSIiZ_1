@@ -126,10 +126,13 @@ using TMPro;
            // SaveData(Prefs.PlayerName, PlayerName);
            // SaveData(Prefs.Gender, Gender);
            // SaveData(Prefs.Progress, "0");
+           PlayerPrefs.SetString("PlayerName", PlayerName);
+           PlayerPrefs.SetString("PlayerGebder", Gender);
+           PlayerPrefs.Save();
+           
             SceneManager.LoadScene("MainMenu");
 
-           PlayerPrefs.SetString("PlayerName", PlayerName);
-           PlayerPrefs.Save();
+
         }
     }
 // }
