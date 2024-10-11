@@ -376,17 +376,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbe489bdc7d6f440abf2255ec0a603d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AprooveButton: {fileID: 258302134}
-  MaleAvatar: {fileID: 315446157}
-  FemaleAvatar: {fileID: 1708104328}
-  UserNameInput: {fileID: 1711357873}
-  FemaleToggle: {fileID: 689843447}
-  MaleToggle: {fileID: 516588830}
+  AprooveButton: {fileID: 0}
+  MaleAvatar: {fileID: 0}
+  FemaleAvatar: {fileID: 0}
+  UserNameInput: {fileID: 0}
+  FemaleToggle: {fileID: 0}
+  MaleToggle: {fileID: 0}
   PlayerName: 
   Gender: 
   ClearPrefs: 0
-  female: {fileID: 808266111}
-  male: {fileID: 384725614}
+  female: {fileID: 0}
+  male: {fileID: 0}
 --- !u!1 &315446157
 GameObject:
   m_ObjectHideFlags: 0
