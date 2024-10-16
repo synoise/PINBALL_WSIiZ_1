@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.idea/.idea.PINBALL_WSIiZ/.idea/.gitignore
+.idea/.idea.PINBALL_WSIiZ/.idea/aws.xml
+.idea/.idea.PINBALL_WSIiZ/.idea/encodings.xml
+.idea/.idea.PINBALL_WSIiZ/.idea/indexLayout.xml
+.idea/.idea.PINBALL_WSIiZ/.idea/vcs.xml
