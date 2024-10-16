@@ -28,8 +28,8 @@ using TMPro;
         #endregion Components
 
         private Regex regex = new Regex(@"^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{3,25}$");
-        private string message = "test message";
-        public string PlayerName="";
+        //private string message = "test message";
+        public string PlayerName = "";
         public string Gender;
         public bool ClearPrefs;
         public Text female;
