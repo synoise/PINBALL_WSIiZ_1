@@ -58,6 +58,8 @@ public class PlayerControl : MonoBehaviour
         {
             Vector3 moveVelocity = Vector3.zero;
             
+            Debug.Log("asd");
+            
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 direction = -1;
