@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ClearSky;
@@ -37,6 +38,38 @@ namespace ClearSky
         {
             ResetAnimation();
             anim.SetTrigger("isJump");
+        }
+
+        private void Update()
+        {
+            Run();
+        }
+
+        void Run()
+        {
+            Vector3 moveVelocity = Vector3.zero;
+            // Debug.Log(anim);
+           
+    
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                moveVelocity = Vector3.left;
+                transform.localScale = new Vector3(-1, 1, 1);
+                RunJohny();
+            }
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                moveVelocity = Vector3.right;
+                transform.localScale = new Vector3(1, 1, 1);
+                RunJohny();
+            }
+
+            if (Input.GetAxisRaw("Horizontal") == 0)
+            {
+                IdleJohny();
+            }
+
+            transform.position += moveVelocity * 5 * Time.deltaTime;
         }
     }
 }
