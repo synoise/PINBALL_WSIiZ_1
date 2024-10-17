@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 303889305}
         m_TargetAssemblyTypeName: AddNameScene, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 303889304}
   - component: {fileID: 303889303}
   - component: {fileID: 303889302}
+  - component: {fileID: 303889305}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -363,6 +364,29 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &303889305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303889300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbe489bdc7d6f440abf2255ec0a603d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AprooveButton: {fileID: 258302134}
+  MaleAvatar: {fileID: 315446157}
+  FemaleAvatar: {fileID: 1708104328}
+  UserNameInput: {fileID: 1711357873}
+  FemaleToggle: {fileID: 689843447}
+  MaleToggle: {fileID: 516588830}
+  PlayerName: 
+  Gender: 
+  ClearPrefs: 1
+  female: {fileID: 808266111}
+  male: {fileID: 384725614}
 --- !u!1 &315446157
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +934,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 303889305}
         m_TargetAssemblyTypeName: AddNameScene, Assembly-CSharp
         m_MethodName: ToogleGender
         m_Mode: 5
@@ -1256,7 +1280,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 303889305}
         m_TargetAssemblyTypeName: AddNameScene, Assembly-CSharp
         m_MethodName: ToogleGender
         m_Mode: 5
@@ -1890,7 +1914,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 303889305}
         m_TargetAssemblyTypeName: AddNameScene, Assembly-CSharp
         m_MethodName: UserTextChanged
         m_Mode: 1

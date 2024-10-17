@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: main_menu_buttons_theams_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 241
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc49bb3bb8a7584eb2265eecf714b3f
+      internalID: 440025416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_menu_buttons_theams_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 246
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e92b861052b3744bd88bbe16a0bb17
+      internalID: 21484940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_menu_buttons_theams_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 247
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 3, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409dcacfc2bb0f04188eb700654e9815
+      internalID: 222434227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_menu_buttons_theams_3
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 55
+        width: 80
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4772705c57b14459eddf3b244fea66
+      internalID: -929633407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      main_menu_buttons_theams_0: 440025416
+      main_menu_buttons_theams_1: 21484940
+      main_menu_buttons_theams_2: 222434227
+      main_menu_buttons_theams_3: -929633407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
