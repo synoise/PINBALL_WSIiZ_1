@@ -6,10 +6,8 @@ public class PlayerControl : MonoBehaviour
 {
         public float movePower = 10f;
         public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
-        public GameObject running; 
-        public GameObject standing1;
-        public GameObject jump1;
-             //Set Gravity Scale in Rigidbody2D Component to 5
+        
+        public WizJohny animation;
 
         private Rigidbody2D rb;
         Vector3 movement;
@@ -27,6 +25,8 @@ public class PlayerControl : MonoBehaviour
 
         private void Update()
         {
+            
+            Debug.Log(isJumping);
             Restart();
             if (alive)
             {
@@ -57,17 +57,16 @@ public class PlayerControl : MonoBehaviour
         void Run()
         {
             Vector3 moveVelocity = Vector3.zero;
-            // Debug.Log(anim);
-   
-    
+            
             if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 direction = -1;
                 moveVelocity = Vector3.left;
                 transform.localScale = new Vector3(direction, 1, 1);
-                running.SetActive(true);
-                standing1.SetActive(false);
-                jump1.SetActive(false);
+                if (isJumping == false)
+                {
+                    animation.RunJohny();
+                }
                 // anim.SetTrigger("isRun");
 
 
@@ -77,31 +76,24 @@ public class PlayerControl : MonoBehaviour
                 direction = 1;
                 moveVelocity = Vector3.right;
                 transform.localScale = new Vector3(direction, 1, 1);
-                running.SetActive(true);
-                standing1.SetActive(false);
-                jump1.SetActive(false);
-                // anim.SetTrigger("isRun");
+                if (isJumping == false)
+                {
+                    animation.RunJohny();
+                }
             }
-            transform.position += moveVelocity * movePower * Time.deltaTime;
+            transform.position += moveVelocity * (movePower * Time.deltaTime);
         }
         void Jump()
         {
             if (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") > 0)
-      
             {
                 isJumping = true;
-                // anim.SetTrigger("isJump");
-                running.SetActive(false); //Set Gravity Scale in Rigidbody2D Component to 5
-                standing1.SetActive(false);
-                jump1.SetActive(true);
+                animation.JumpJohny();
         
             }
             if (!isJumping)
             {
-                // anim.SetTrigger("isIdle");
-                running.SetActive(false); //Set Gravity Scale in Rigidbody2D Component to 5
-                standing1.SetActive(true);
-                jump1.SetActive(false);
+                animation.IdleJohny();
                 return;
             }
 

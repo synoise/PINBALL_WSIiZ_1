@@ -9,13 +9,14 @@ public class collision : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter(Collision collision)
+   
+    void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("OnCollisionEnter");
-        ContactPoint contact = collision.contacts[0];
-        Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 position = contact.point;
-        Destroy(gameObject);
+        //ContactPoint contact = collision.contacts[0];
+        //Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        //Vector3 position = contact.point;
+        //Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

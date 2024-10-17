@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ClearSky;
@@ -13,30 +14,20 @@ namespace ClearSky
         public void Awake()
         {
             anim = GetComponent<Animator>();
-            ResetAnimation();
-            anim.SetBool("isIdle", true);
+            IdleJohny();
         }
 
-        public void ResetAnimation()
-        {
-            anim.SetBool("isIdle", false);
-            anim.SetBool("isRun", false);
-            anim.SetBool("isJump", false);
-        }
         public  void IdleJohny()
         {
-            ResetAnimation();
-            anim.SetTrigger("isIdle");
+            anim.SetBool("IsRunning", false);
         }
         public  void RunJohny()
         {
-            ResetAnimation();
-            anim.SetTrigger("isRun");
+            anim.SetBool("IsRunning", true);
         }
         public void JumpJohny()
         {
-            ResetAnimation();
-            anim.SetTrigger("isJump");
+            anim.SetTrigger("IsJumping");
         }
     }
 }
