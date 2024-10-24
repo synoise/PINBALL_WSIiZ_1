@@ -6,7 +6,7 @@ using ClearSky;
 
 namespace ClearSky
 {
-    public class WizJohny : MonoBehaviour
+    public class WizJohny2W : MonoBehaviour
     {
 
         public Animator anim;
