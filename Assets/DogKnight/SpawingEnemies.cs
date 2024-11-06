@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawingEnemies : MonoBehaviour
+public class SpawingAliens : MonoBehaviour
 {
 
     private float timing = 3f;

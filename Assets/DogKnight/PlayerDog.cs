@@ -1,55 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDog : MonoBehaviour
 {
-Camera cam;
-Transform my;
-Rigidbody body;
-
-void Start()
-{
-    cam = Camera.main;
-    my = GetComponent <Transform> ();
-    body = GetComponent <Rigidbody> ();
-}
-
-void Update()
-{
-    // Distance from camera to object.  We need this to get the proper calculation.
-    float camDis = cam.transform.position.y - my.position.y;
-
-    // Get the mouse position in world space. Using camDis for the Z axis.
-    Vector3 mouse = cam.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, camDis));
-
-    float AngleRad = Mathf.Atan2 (mouse.y - my.position.y, mouse.x - my.position.x);
-    float angle = (180 / Mathf.PI) * AngleRad;
     
-    transform.Rotate (new Vector3 (0, angle, 0) * 5*Time.deltaTime);
-    
-    
-    // // body.rotation= angle - 90;
-    // if (Input.GetKey("z")) 
-    // {
-    //     transform.Rotate(  0,3*Time.deltaTime, 0,Space.Self); 
-    // } 
-    //
-    // if (Input.GetKey("x")) 
-    // { 
-    //     transform.Rotate( 0,4*Time.deltaTime, 0,Space.Self); 
-    // }
-}
+    private Camera cam;
+    private Transform my;
+    private Rigidbody body;
+    private Vector3 _input;
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] private float _speed = 5;
 
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     Debug.Log("OnCollisionEnter2D " + col.collider.tag);
-    //
-    //     if (col.gameObject.CompareTag("Zombie"))
-    //     {
-    //         Destroy(gameObject);
-    //     } 
-    //         
-    // }
+    void Start()
+    {
+        cam = Camera.main;
+        my = GetComponent<Transform>();
+        _rb = GetComponent<Rigidbody>();
+    }
+    
+    void Update()
+    {
+        Look();
+    }
+    private void Look()
+    {
+        // Pobierz pozycję kursora w przestrzeni świata z uwzględnieniem dystansu kamery do gracza
+        float camDis = cam.transform.position.y - my.position.y;
+        Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
 
+        // Oblicz kierunek od gracza do kursora
+        Vector3 direction = mousePos - my.position;
+
+        // Ustawienie y na 0, aby ograniczyć obrót tylko do osi poziomej
+        direction.y = 0;
+
+        // Oblicz docelowy obrót (kierunek w pełnym 360 stopni)
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        // Ustaw obrót za pomocą interpolacji Slerp
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
+    }
+    
+
+    private void Move()
+    {
+        _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("OnCollisionEnter2D " + col.collider.tag);
+
+        if (col.gameObject.CompareTag("Zombie"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
